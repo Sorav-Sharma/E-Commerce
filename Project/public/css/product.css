@@ -1,0 +1,89 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a basic styling to the card container */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow cards to wrap to the next row */
+    justify-content: flex-start;
+    /* Align cards to the start of the flex container */
+    align-items: flex-start;
+    /* Align cards to the start of the flex container */
+    min-height: 100vh;
+    /* Make sure the container takes at least the full height of the viewport */
+}
+
+/* Style for the card itself */
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    margin: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Style for the card header */
+.card__header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+.product_title {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Style for the card image */
+.card__image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Style for the card content */
+.card__content {
+    padding: 10px;
+    text-align: center;
+}
+
+.product__price {
+    font-size: 1.1rem;
+    color: #008080;
+    margin-bottom: 5px;
+}
+
+.product__description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Style for the card actions */
+.card__actions {
+    text-align: center;
+    padding: 10px;
+}
+
+.btn {
+    background-color: #008080;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #006666;
+}
