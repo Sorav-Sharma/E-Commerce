@@ -1,0 +1,30 @@
+<%- include('../includes/head') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation') %>
+            <main>
+                <% if(orders.length <=0) {%>
+                    <h1>NOTHING HERE</h1>
+                    <%} else{%>
+                        <ul>
+                            <%orders.forEach(order=>{ %>
+                                <li>
+                                    <h1>Order - # <%= order._id %>
+                                    </h1>
+                                    <a href="/orders/<%=order._id%>">Invoice</a>
+                                    <ul>
+                                        <% order.products.forEach(p=>{ %>
+                                            <li style="border: 2px solid white; margin: 5px; padding: 10px;">
+                                                <%= p.product.title %> (<%= p.quantity %>)
+                                            </li>
+                                </li>
+
+                                <% }); %>
+                        </ul>
+                        </li>
+                        <%}); %>
+                            </ul>
+                            <%}%>
+            </main>
+            <%- include('../includes/end') %>

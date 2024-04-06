@@ -1,0 +1,52 @@
+<!-- Just displays lesser products than product-list -->
+<%- include('../includes/head') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+
+    </head>
+
+    <body>
+        <%- include('../includes/navigation') %>
+
+            <main>
+                <h1>My Products</h1>
+                <!-- in opening and closing tags (<% %>) we can add vanilla JS -->
+                <% if(prods.length>0){ %>
+                    <div class="grid">
+                        <% for(let product of prods) {%>
+                            <article class="card product-item">
+                                <header class="card__header">
+                                    <h1 class="product_title">
+                                        <%= product.title%>
+                                    </h1>
+                                </header>
+                                <div class="card__image">
+                                    <img src="/<%= product.imageUrl %>" alt="Img">
+                                </div>
+                                <div class="card__content">
+                                    <h2 class="product__price">$ <%= product.price%>
+                                    </h2>
+                                    <p class="product__description">
+                                        <%= product.description%>
+                                    </p>
+                                </div>
+
+                                <div class="card__actions">
+                                    <% if(isAuthenticated){ %>
+                                        <%- include('../includes/add-to-cart',{product:product}) %>
+                                            <% } %>
+
+                                </div>
+                            </article>
+                            <% } %>
+                    </div>
+
+                    <%- include('../includes/pagination') %>
+
+
+                        <% } else { %>
+                            <h1>NO PRODUCT FOUND</h1>
+                            <%} %>
+            </main>
+
+            <%- include('../includes/end') %>
